@@ -1,0 +1,18 @@
+<fieldset>
+  <legend>Settings</legend>
+  <div class="input-group">
+    <label class="input-group-addon">Title:</label>
+    <input id="story-title" type="text" class="form-control" [(ngModel)]="story.title">
+  </div>
+  <div class="input-group">
+    <label class="input-group-addon">Description:</label>
+    <input id="story-description" type="text" class="form-control" [(ngModel)]="story.description">
+  </div>
+  <div class="input-group">
+    <label class="input-group-addon">Start:</label>
+    <select id="story-start" class="form-control" [(ngModel)]="story.startWaypointId">
+      <option></option>
+      <option [value]="waypoint.id" *ngFor="let waypoint of story.waypoints">{{waypoint.title}}</option>
+    </select>
+  </div>
+</fieldset>

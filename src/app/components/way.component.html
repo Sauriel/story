@@ -1,0 +1,33 @@
+<fieldset>
+  <legend>Ways</legend>
+  <div class="input-group">
+    <label class="input-group-addon">Existing:</label>
+    <select id="story-waypoints-ways-select" class="form-control" (change)="onChange($event.target.value)">
+      <option></option>
+      <option [value]="way.id" *ngFor="let way of ways">{{way.title}}</option>
+    </select>
+  </div>
+
+  <fieldset>
+    <legend>New/Edit</legend>
+    <div class="input-group">
+      <label class="input-group-addon">Title:</label>
+      <input id="story-waypoints-ways-new-title" type="text" class="form-control" [(ngModel)]="way.title">
+    </div>
+    <div class="input-group">
+      <label class="input-group-addon">Target:</label>
+      <select id="story-waypoints-ways-new-target" class="form-control" [(ngModel)]="way.targetWaypointId">
+        <option></option>
+        <option [value]="waypoint.id" *ngFor="let waypoint of story.waypoints">{{waypoint.title}}</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label class="input-group-addon">Type:</label>
+      <select id="story-waypoints-ways-new-type" class="form-control" [(ngModel)]="way.typeId">
+        <option></option>
+        <option [value]="type.id" *ngFor="let type of story.types">{{type.title}}</option>
+      </select>
+    </div>
+    <button id="story-waypoints-new-save" class="btn btn-default" (click)=save()>Add</button>
+  </fieldset>
+</fieldset>

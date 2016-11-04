@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+fieldset {
+  padding: .35em .625em .75em;
+  margin: 10px 2px 0;
+  border: 1px solid silver;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.02);
+}
+
+legend {
+  width: auto;
+  padding: 0 10px;
+  border: 0;
+}
+
+input[type=file] {
+  display: inline-block;
+}

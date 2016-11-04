@@ -1,0 +1,16 @@
+  <h1>Build a Story</h1>
+
+  <div id="story-maker" class="form-inline">
+    <settings [story]="story"></settings>
+
+    <types [story]="story"></types>
+
+    <waypoint [story]="story"></waypoint>
+
+    <br />
+    <button id="story-export" class="btn btn-primary" *ngIf="!downloadUrl" (click)=export()>generate export</button>
+    <a id="story-download" *ngIf="downloadUrl" [href]="downloadUrl" download="story.json" class="btn btn-success" (click)=download()>download export</a>
+
+    <input *ngIf="!file" type="file" id="story-import-file" class="pull-right" #files (change)="change(files)" />
+    <button *ngIf="file" id="story-import" class="btn btn-warning pull-right" (click)=import()>import</button>
+</div>
