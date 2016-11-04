@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h1>{{story.title}}</h1>
+  <p>{{story.description}}</p>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{currentWaypoint.title}}</h3>
+  </div>
+  <div class="panel-body">
+    {{currentWaypoint.content}}
+    <div class="list-group">
+      <button type="button" class="list-group-item list-group-item-{{getTypeColor(way.typeId)}}" *ngFor="let way of currentWaypoint.ways" (click)="selectWaypoint(way.targetWaypointId)">
+        {{way.title}}
+      </button>
+    </div>
+  </div>
+</div>

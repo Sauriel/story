@@ -1,0 +1,25 @@
+<fieldset>
+  <legend>Types</legend>
+  <div class="input-group">
+    <label class="input-group-addon">Existing:</label>
+    <select id="story-types-select" class="form-control" (change)="onChange($event.target.value)">
+      <option></option>
+      <option [value]="type.id" *ngFor="let type of story.types">{{type.title}}</option>
+    </select>
+  </div>
+  <div class="input-group">
+    <label class="input-group-addon">New/Edit:</label>
+    <input id="story-types-new" type="text" class="form-control" [(ngModel)]="type.title">
+  </div>
+  <div class="input-group">
+    <label class="input-group-addon">Color:</label>
+    <select id="story-types-select" class="form-control" [(ngModel)]="type.color">
+      <option value="">none</option>
+      <option class="bg-success" value="success">green</option>
+      <option class="bg-info" value="info">blue</option>
+      <option class="bg-warning" value="warning">yellow</option>
+      <option class="bg-danger" value="danger">red</option>
+    </select>
+  </div>
+  <button id="story-types-save" class="btn btn-default" (click)=add()>Add</button>
+</fieldset>
